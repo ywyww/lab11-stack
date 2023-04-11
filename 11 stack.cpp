@@ -15,22 +15,22 @@ char filenameTmp[] = "tmpFile";
 char filename[] = "myFile";
 
 int n = 0;
-bool flag1 = false;										// Стэк создан
+bool flag1 = false;										// РЎС‚РµРє СЃРѕР·РґР°РЅ
 
-void create();											// Создает пустой стек
-void fill(Student*);									// Заполняет стек значениями
-void push(char*);										// Добавление элемента на последний
-void pop(char*);										// Удаление последнего элемента и запись
-void pop();												// Удаление последнего элемента
-void print(Student*);									// Печать стека
-void destroy();											// Уничтожение стека
-void add(const int, const int, FILE*);					// Добавление по K элементов слева и справа
-void pluralPush(const int);								// Множественное добавление элементов (для функции add)
-void writePart(FILE*, const int, const int);			// Запись части стека в файл с удалением (для функции add);
-void chop(const int, FILE*, char* data);				// Удаление элемента с позиции N, если незачем записывать, data = NULL
-void menu(const int);									// Меню
-void restore(FILE*);									// Восстановление стека из файла
-void write(FILE*, Student*);							// Запись стека в файл (без удаления элементов
+void create();											// РЎРѕР·РґР°РµС‚ РїСѓСЃС‚РѕР№ СЃС‚РµРє
+void fill(Student*);										// Р—Р°РїРѕР»РЅСЏРµС‚ СЃС‚РµРє Р·РЅР°С‡РµРЅРёСЏРјРё
+void push(char*);										// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РЅР° РїРѕСЃР»РµРґРЅРёР№
+void pop(char*);										// РЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° Рё Р·Р°РїРёСЃСЊ
+void pop();											// РЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
+void print(Student*);										// РџРµС‡Р°С‚СЊ СЃС‚РµРєР°
+void destroy();											// РЈРЅРёС‡С‚РѕР¶РµРЅРёРµ СЃС‚РµРєР°
+void add(const int, const int, FILE*);								// Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕ K СЌР»РµРјРµРЅС‚РѕРІ СЃР»РµРІР° Рё СЃРїСЂР°РІР°
+void pluralPush(const int);									// РњРЅРѕР¶РµСЃС‚РІРµРЅРЅРѕРµ РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ (РґР»СЏ С„СѓРЅРєС†РёРё add)
+void writePart(FILE*, const int, const int);							// Р—Р°РїРёСЃСЊ С‡Р°СЃС‚Рё СЃС‚РµРєР° РІ С„Р°Р№Р» СЃ СѓРґР°Р»РµРЅРёРµРј (РґР»СЏ С„СѓРЅРєС†РёРё add);
+void chop(const int, FILE*, char* data);							// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° СЃ РїРѕР·РёС†РёРё N, РµСЃР»Рё РЅРµР·Р°С‡РµРј Р·Р°РїРёСЃС‹РІР°С‚СЊ, data = NULL
+void menu(const int);										// РњРµРЅСЋ
+void restore(FILE*);										// Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃС‚РµРєР° РёР· С„Р°Р№Р»Р°
+void write(FILE*, Student*);									// Р—Р°РїРёСЃСЊ СЃС‚РµРєР° РІ С„Р°Р№Р» (Р±РµР· СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
 
 int main() {
 	SetConsoleCP(1251);
@@ -39,15 +39,15 @@ int main() {
 	while (true) {
 		system("pause");
 		system("cls");
-		cout << "Здравствуйте, что вы хотите сделать?" << endl;
-		cout << "1. Создать стек" << endl;
-		cout << "2. Добавить по K элементов к элементу на позиции pos слева и справа" << endl;
-		cout << "3. Удалить элемент из стека" << endl;
-		cout << "4. Напечатать стек" << endl;
-		cout << "5. Записать стек в файл" << endl;
-		cout << "6. Уничтожить стек" << endl;
-		cout << "7. Восстановить стек из файла" << endl; cout << endl;
-		cout << "Введите c" << endl;
+		cout << "Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ, С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ СЃРґРµР»Р°С‚СЊ?" << endl;
+		cout << "1. РЎРѕР·РґР°С‚СЊ СЃС‚РµРє" << endl;
+		cout << "2. Р”РѕР±Р°РІРёС‚СЊ РїРѕ K СЌР»РµРјРµРЅС‚РѕРІ Рє СЌР»РµРјРµРЅС‚Сѓ РЅР° РїРѕР·РёС†РёРё pos СЃР»РµРІР° Рё СЃРїСЂР°РІР°" << endl;
+		cout << "3. РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РёР· СЃС‚РµРєР°" << endl;
+		cout << "4. РќР°РїРµС‡Р°С‚Р°С‚СЊ СЃС‚РµРє" << endl;
+		cout << "5. Р—Р°РїРёСЃР°С‚СЊ СЃС‚РµРє РІ С„Р°Р№Р»" << endl;
+		cout << "6. РЈРЅРёС‡С‚РѕР¶РёС‚СЊ СЃС‚РµРє" << endl;
+		cout << "7. Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ СЃС‚РµРє РёР· С„Р°Р№Р»Р°" << endl; cout << endl;
+		cout << "Р’РІРµРґРёС‚Рµ c" << endl;
 		int c;
 		cin >> c;
 		system("cls");
@@ -94,7 +94,7 @@ void pop() {
 	delete popper;
 	n--;
 }
-void print(Student* point) {		// Рекурсивно пишет все из стека
+void print(Student* point) {		// Р РµРєСѓСЂСЃРёРІРЅРѕ РїРёС€РµС‚ РІСЃРµ РёР· СЃС‚РµРєР°
 	Student* ptr = point;
 	if (point != NULL) {
 		print(ptr->ptrNext);
@@ -115,13 +115,13 @@ void pluralPush(const int K) {
 	char tmp[256];
 	int i = 0;
 	while (i < K) {
-		cout << "Идентификатор? " << endl;
+		cout << "РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ? " << endl;
 		gets_s(tmp, 256);
 		push(tmp);
 		i++;
 	}
 }		
-void writePart(FILE* file, const int num, const int pos) {		// работает через pop
+void writePart(FILE* file, const int num, const int pos) {		// СЂР°Р±РѕС‚Р°РµС‚ С‡РµСЂРµР· pop
 	int a = num;
 	if (a >= pos) {
 		char buf[256];
@@ -129,7 +129,7 @@ void writePart(FILE* file, const int num, const int pos) {		// работает через po
 		writePart(file, a - 1, pos);
 		fwrite(&buf, sizeof(buf), 1, file);
 	}
-}	// Запись части стека в файл (для функции add)
+}	// Р—Р°РїРёСЃСЊ С‡Р°СЃС‚Рё СЃС‚РµРєР° РІ С„Р°Р№Р» (РґР»СЏ С„СѓРЅРєС†РёРё add)
 void add(const int pos, const int K, FILE* file) {
 	char tmp[256];
 	if ((file = fopen(filenameTmp, "wb+")) == NULL) exit(1);
@@ -142,7 +142,7 @@ void add(const int pos, const int K, FILE* file) {
 	push(tmp);
 
 	pluralPush(K);
-	restore(file);	// доресторивает файл
+	restore(file);	// РґРѕСЂРµСЃС‚РѕСЂРёРІР°РµС‚ С„Р°Р№Р»
 	fclose(file);
 	remove(filenameTmp);
 }
@@ -164,7 +164,7 @@ void chop(const int pos, FILE* file, char* data = NULL) {
 	remove(filenameTmp);
 }
 
-void write(FILE* file, Student* ptrHead) {			// работает для меню
+void write(FILE* file, Student* ptrHead) {			// СЂР°Р±РѕС‚Р°РµС‚ РґР»СЏ РјРµРЅСЋ
 	Student* ptr = ptrHead;
 	if (ptr != NULL) {
 		char buf[256];
@@ -184,58 +184,58 @@ void restore(FILE* file) {
 void menu(const int c) {
 	FILE* file = NULL;
 
-	if ((c == 1 || c == 7) && flag1) {					// для случая, когда список уже создан
-		cout << "Вы уже создали стек" << endl;
+	if ((c == 1 || c == 7) && flag1) {					// РґР»СЏ СЃР»СѓС‡Р°СЏ, РєРѕРіРґР° СЃРїРёСЃРѕРє СѓР¶Рµ СЃРѕР·РґР°РЅ
+		cout << "Р’С‹ СѓР¶Рµ СЃРѕР·РґР°Р»Рё СЃС‚РµРє" << endl;
 		return;
 	}
-	else if (c > 1 && c < 7 && !flag1) {				// для случая, когда список еще не создан
-		cout << "Создайте/ восстановите стек" << endl;
+	else if (c > 1 && c < 7 && !flag1) {				// РґР»СЏ СЃР»СѓС‡Р°СЏ, РєРѕРіРґР° СЃРїРёСЃРѕРє РµС‰Рµ РЅРµ СЃРѕР·РґР°РЅ
+		cout << "РЎРѕР·РґР°Р№С‚Рµ/ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚Рµ СЃС‚РµРє" << endl;
 		return;
 	}
-	else if (c >= 2 && c <= 5 && n == 0) { cout << "Стэк пуст." << endl; return; }
+	else if (c >= 2 && c <= 5 && n == 0) { cout << "РЎС‚СЌРє РїСѓСЃС‚." << endl; return; }
 	switch (c) {
 	case 1:
 	{
 		flag1 = true;
-		cout << "Введите количество узлов стека: ";
+		cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СѓР·Р»РѕРІ СЃС‚РµРєР°: ";
 		cin >> n;
 		while (n <= 0) {
-			cout << "Нельзя ввести столько узлов" << endl;
+			cout << "РќРµР»СЊР·СЏ РІРІРµСЃС‚Рё СЃС‚РѕР»СЊРєРѕ СѓР·Р»РѕРІ" << endl;
 			cin >> n;
 		}
 		create();
-		cout << "Введите индетификатор для " << n << " пользователей: " << endl; cin.ignore();
+		cout << "Р’РІРµРґРёС‚Рµ РёРЅРґРµС‚РёС„РёРєР°С‚РѕСЂ РґР»СЏ " << n << " РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№: " << endl; cin.ignore();
 		fill(head);
 		break;
 	}
 	case 2:
 	{
-		cout << "Введите позицию для добавления и количество элементов для добавления" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёСЋ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ" << endl;
 		int pos, K;
 		cin >> pos >> K;
-		cin.get();									// нормализация буфера для работы без перебоев
-		while (pos > n) { cout << "В стэке всего " << n << "позиций" << endl; cin >> pos; cin.get(); }
-		add(pos, K, file);			// добавление элементов с двух сторон
+		cin.get();									// РЅРѕСЂРјР°Р»РёР·Р°С†РёСЏ Р±СѓС„РµСЂР° РґР»СЏ СЂР°Р±РѕС‚С‹ Р±РµР· РїРµСЂРµР±РѕРµРІ
+		while (pos > n) { cout << "Р’ СЃС‚СЌРєРµ РІСЃРµРіРѕ " << n << "РїРѕР·РёС†РёР№" << endl; cin >> pos; cin.get(); }
+		add(pos, K, file);			// РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ СЃ РґРІСѓС… СЃС‚РѕСЂРѕРЅ
 		cout << endl;
-		cout << "Ваш стек: " << endl;
+		cout << "Р’Р°С€ СЃС‚РµРє: " << endl;
 		print(head);
 		break;
 	}
 	case 3:
 	{
 		int pos;
-		cout << "Введите позицию для удаления" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёСЋ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ" << endl;
 		cin >> pos;
-		while (pos > n) { cout << "В списке всего " << n << " позиций" << endl; cin >> pos; }
+		while (pos > n) { cout << "Р’ СЃРїРёСЃРєРµ РІСЃРµРіРѕ " << n << " РїРѕР·РёС†РёР№" << endl; cin >> pos; }
 		chop(pos, file, NULL);
 		cout << endl;
-		cout << "Ваш стек: " << endl;
+		cout << "Р’Р°С€ СЃС‚РµРє: " << endl;
 		print(head);
 		break;
 	}
 	case 4:
 	{
-		cout << "Ваш стек: " << endl;
+		cout << "Р’Р°С€ СЃС‚РµРє: " << endl;
 		print(head);
 		cout << endl;
 		break;
@@ -251,27 +251,27 @@ void menu(const int c) {
 	case 6:
 	{
 		destroy();
-		cout << "Стэк удален" << endl;
+		cout << "РЎС‚СЌРє СѓРґР°Р»РµРЅ" << endl;
 		flag1 = false;
 		break;
 	}
 
 	case 7:
 	{
-		cout << "Восстановление стека из файла" << endl;
+		cout << "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЃС‚РµРєР° РёР· С„Р°Р№Р»Р°" << endl;
 		int n1 = n;
 		if ((file = fopen(filename, "rb+")) == NULL) {
 			if ((file = fopen(filename, "wb+")) == NULL) exit(6);
 		}
 		restore(file);
 		fclose(file);
-		if (n - n1 == 0) cout << "Нечего восстанавливать" << endl;
+		if (n - n1 == 0) cout << "РќРµС‡РµРіРѕ РІРѕСЃСЃС‚Р°РЅР°РІР»РёРІР°С‚СЊ" << endl;
 		else flag1 = true;
 		break;
 	}
 	default:
 	{	
-		cout << "Выход из меню" << endl;
+		cout << "Р’С‹С…РѕРґ РёР· РјРµРЅСЋ" << endl;
 		destroy();
 		exit(777);
 	}
